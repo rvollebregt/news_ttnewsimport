@@ -73,7 +73,6 @@ class TTNewsNewsDataProviderService implements DataProviderServiceInterface, \TY
 		);
 
 		while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
-
 			$importData[] = array(
 				'pid' => $row['pid'],
 				'hidden' => $row['hidden'],
