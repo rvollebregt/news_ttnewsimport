@@ -102,18 +102,7 @@ class TTNewsNewsDataProviderService implements DataProviderServiceInterface, \TY
 				'related_links' => array_key_exists('tx_tlnewslinktext_linktext', $row) ? $this->getRelatedLinksTlNewsLinktext($row['links'], $row['tx_tlnewslinktext_linktext']) : $this->getRelatedLinks($row['links']),
 				'content_elements' => $row['tx_rgnewsce_ce'],
 				'import_id' => $row['uid'],
-				'import_source' => $this->importSource,
-				'tx_aunewsevent_from' => $row['tx_aunewsevent_from'],
-				'tx_aunewsevent_to' => $row['tx_aunewsevent_to'],
-				'tx_aunewsevent_where' => $row['tx_aunewsevent_where'],
-				'tx_aunewsevent_organizer' => $row['tx_aunewsevent_organizer'],
-				'tx_aunewsevent_organizer_email' => $row['tx_aunewsevent_organizer_email'],
-				'tx_aunewsevent_regfrom' => $row['tx_aunewsevent_regfrom'],
-				'tx_aunewsevent_regto' => $row['tx_aunewsevent_regto'],
-				'tx_aunewsevent_regurl' => $row['tx_aunewsevent_regurl'],
-				'tx_aunewsevent_preview_end' => $row['tx_aunewsevent_preview_end'],
-				'tx_aunewsevent_preview_hash' => $row['tx_aunewsevent_preview_hash'],
-				'tx_aunewsevent_showyear' => $row['tx_aunewsevent_showyear'],
+				'import_source' => $this->importSource
 			);
 		}
 		$GLOBALS['TYPO3_DB']->sql_free_result($res);
