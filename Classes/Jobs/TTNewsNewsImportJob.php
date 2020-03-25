@@ -36,7 +36,7 @@ class TTNewsNewsImportJob extends AbstractImportJob {
 	/**
 	 * @var int
 	 */
-	protected $numberOfRecordsPerRun = 30;
+	protected $numberOfRecordsPerRun = 100;
 
 	protected $importServiceSettings = array(
 		'findCategoriesByImportSource' => 'TT_NEWS_CATEGORY_IMPORT'

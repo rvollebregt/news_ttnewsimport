@@ -61,14 +61,14 @@ class TTNewsNewsDataProviderService implements DataProviderServiceInterface, \TY
 	 * @param integer $limit limit
 	 * @return array
 	 */
-	public function getImportData($offset = 0, $limit = 50) {
+	public function getImportData($offset = 0, $limit = 100) {
 		$importData = array();
 
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*',
 			'tt_news',
 			'deleted=0 AND t3ver_oid = 0 AND t3ver_wsid = 0',
 			'',
-			'sys_language_uid ASC',
+			'uid ASC',
 			$offset . ',' . $limit
 		);
 
