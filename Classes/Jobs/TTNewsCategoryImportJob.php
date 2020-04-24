@@ -32,6 +32,10 @@ use GeorgRinger\News\Jobs\AbstractImportJob;
  * @subpackage news_ttnewsimport
  */
 class TTNewsCategoryImportJob extends AbstractImportJob {
+    /**
+     * @var int
+     */
+    protected $numberOfRecordsPerRun = 100;
 
 	/**
 	 * Inject import dataprovider service
