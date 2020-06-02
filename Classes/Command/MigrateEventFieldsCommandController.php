@@ -37,6 +37,7 @@ class MigrateEventFieldsCommandController extends CommandController
                 'tx_aunewsevent_preview_end' => $oldNewsRecord['tx_aunewsevent_preview_end'],
                 'tx_aunewsevent_preview_hash' => $oldNewsRecord['tx_aunewsevent_preview_hash'],
                 'tx_aunewsevent_showyear' => $oldNewsRecord['tx_aunewsevent_showyear'],
+                'tx_lfaunewsserver_emne' => $oldNewsRecord['tx_lfaunewsserver_emne']
             ];
 
             $GLOBALS['TYPO3_DB']->exec_UPDATEquery(
