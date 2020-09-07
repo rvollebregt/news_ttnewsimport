@@ -22,6 +22,6 @@ CREATE TABLE tx_news_domain_model_news (
 	tx_aunewsevent_preview_end int(11) DEFAULT '0' NOT NULL,
 	tx_aunewsevent_preview_hash varchar(255) DEFAULT '' NOT NULL,
 	tx_aunewsevent_showyear tinyint(4) DEFAULT '0' NOT NULL,
-	tx_lfaunewsserver_emne int(11) DEFAULT '0' NOT NULL,
+	tx_lfaunewsserver_emne text NOT NULL,
 	tx_rgnewsimg_design int(11) DEFAULT '0' NOT NULL
 );
