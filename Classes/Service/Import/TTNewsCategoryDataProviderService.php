@@ -59,7 +59,7 @@ class TTNewsCategoryDataProviderService implements DataProviderServiceInterface,
 	 * @param integer $limit limit
 	 * @return array
 	 */
-	public function getImportData($offset = 0, $limit = 100) {
+	public function getImportData($offset = 0, $limit = 100000) {
 		$importData = array();
 
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*',
