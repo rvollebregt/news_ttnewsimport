@@ -37,6 +37,8 @@ class TTNewsNewsDataProviderService implements DataProviderServiceInterface, \TY
 
 	protected $importSource = 'TT_NEWS_IMPORT';
 
+	const WHERE_CLAUSE = "deleted=0 AND t3ver_oid = 0 AND t3ver_wsid = 0 AND NOT ((type=8 OR type=2) AND (ext_url LIKE '%news.au%' OR ext_url LIKE '%newsroom.au%'))";
+
 	/**
 	 * Get total record count
 	 *
@@ -45,7 +47,7 @@ class TTNewsNewsDataProviderService implements DataProviderServiceInterface, \TY
 	public function getTotalRecordCount() {
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('count(*)',
 			'tt_news',
-			'deleted=0 AND t3ver_oid = 0 AND t3ver_wsid = 0'
+			self::WHERE_CLAUSE
 		);
 
 		list($count) = $GLOBALS['TYPO3_DB']->sql_fetch_row($res);
@@ -66,7 +68,7 @@ class TTNewsNewsDataProviderService implements DataProviderServiceInterface, \TY
 
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*',
 			'tt_news',
-			'deleted=0 AND t3ver_oid = 0 AND t3ver_wsid = 0',
+			self::WHERE_CLAUSE,
 			'',
 			'uid ASC',
 			$offset . ',' . $limit
